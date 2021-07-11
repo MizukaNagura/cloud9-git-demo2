@@ -21,29 +21,12 @@
                 
                 {!! Form::label('comment','登録動画へのコメント',['class'=> 'mt-3']) !!}
                 {!! Form::text('comment',null,['class'=>'form-control']) !!}
-                
-{!! Form::submit('新規登録する？',['class'=> 'button btn btn-primary mt-5 mb-5']) !!}
+                  
+                {!! Form::submit('新規登録する？',['class'=> 'button btn btn-primary mt-5 mb-5']) !!}
 
             </div>
         {!! Form::close() !!}
         
-            
-            <h2 class="mt-5 mb-5">動画を削除する</h2>
- 
-                @foreach ($movies as $key => $movie)
-            
-                    <p>動画ID：{{ $movie->id }}　URL：{{ $movie->url }}　コメント：{{ $movie->comment }}</p>
-            
-                    {!! Form::open(['route' => ['rest.destroy', $movie->id], 'method' => 'delete']) !!}
-                            {!! Form::submit('この動画を削除する？', ['class' => 'button btn btn-danger mb-3']) !!}
-                    {!! Form::close() !!}
-
-                @endforeach
-
-        </div>
-        
-
-
         <h2 class="mt-5">あなたの登録済み動画</h2>
 
         @include('movies.movies', ['movies' => $movies])

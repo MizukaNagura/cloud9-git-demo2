@@ -227,7 +227,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
-             'key_name' => env('API_KEY'),//追記
+    'key_name' => env('API_KEY'),//追記
 
 
 ];
